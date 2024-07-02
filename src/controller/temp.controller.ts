@@ -9,9 +9,9 @@ const getTemperatureFromApi = async (req:Request, res:Response, next:NextFunctio
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${clientIp}&appid=${apiKey}&units=metric`;
 
         const response = await axios.get(apiUrl);
-        const temperature = response.data.main.temp;
+        const temp: number = response.data.main.temp;
 
-        return temperature;
+        return temp;
             
     } catch (error) {
         next(error)

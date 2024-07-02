@@ -16,7 +16,7 @@ const helloServer = async (req:Request, res:Response, next:NextFunction) =>{
             const geo: string | any = geoip.lookup(clientIp)
             const city = geo.city
             const location = geo && geo.city ? city : "Error getting city name"
-            const temperature = await getTemperatureFromApi
+            const temperature = await getTemperatureFromApi(req, res, next)
 
             res.status(200).json({
                 client_ip: clientIp,
