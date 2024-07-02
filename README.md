@@ -1,4 +1,4 @@
-# Hello-Server
+# HELLO SERVER
 
 ## HOW TO START
 
